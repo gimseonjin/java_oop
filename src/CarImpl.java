@@ -3,12 +3,12 @@ package src;
 public abstract class CarImpl implements Car{
     protected static int total_count = 0;
     protected int car_number;
-    int price;
-    int fuelVolume;
-    int currentSpeed;
-    boolean isRunning;
-    int maxPassenger;
-    int currentPassenger;
+    protected int price;
+    protected int fuelVolume;
+    protected int currentSpeed;
+    protected boolean isRunning;
+    protected int maxPassenger;
+    protected int currentPassenger;
 
     public boolean run(int distance){
         for(int i = 0; i < distance; i++){
@@ -83,76 +83,14 @@ public abstract class CarImpl implements Car{
             this.isRunning = false;
         }
 
-        int changed_speed = this.currentSpeed + speed;
+        int changed_speed = speed;
+
         if(changed_speed > 0){
             this.currentSpeed = changed_speed;
         }else{
             this.currentSpeed = 0;
         }
+
         return true;
-    }
-
-    public static int getTotal_count() {
-        return total_count;
-    }
-
-    public static void setTotal_count(int total_count) {
-        CarImpl.total_count = total_count;
-    }
-
-    public int getCar_number() {
-        return car_number;
-    }
-
-    public void setCar_number(int car_number) {
-        this.car_number = car_number;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getFuelVolume() {
-        return fuelVolume;
-    }
-
-    public void setFuelVolume(int fuelVolume) {
-        this.fuelVolume = fuelVolume;
-    }
-
-    public int getCurrentSpeed() {
-        return currentSpeed;
-    }
-
-    public void setCurrentSpeed(int currentSpeed) {
-        this.currentSpeed = currentSpeed;
-    }
-
-    public boolean isRunning() {
-        return isRunning;
-    }
-
-    public void setRunning(boolean running) {
-        isRunning = running;
-    }
-
-    public int getMaxPassenger() {
-        return maxPassenger;
-    }
-
-    public void setMaxPassenger(int maxPassenger) {
-        this.maxPassenger = maxPassenger;
-    }
-
-    public int getCurrentPassenger() {
-        return currentPassenger;
-    }
-
-    public void setCurrentPassenger(int currentPassenger) {
-        this.currentPassenger = currentPassenger;
     }
 }

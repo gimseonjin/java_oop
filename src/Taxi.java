@@ -4,7 +4,6 @@ public class Taxi extends CarImpl {
 
     int defaultDistance;
     int pricePerDistance;
-
     int destination;
 
     private Taxi(){
@@ -15,13 +14,15 @@ public class Taxi extends CarImpl {
     public static Taxi build(int startFuelVolume, int price, int pricePerDistance, int defaultDistance){
         Taxi taxi = new Taxi();
 
-        taxi.setRunning(true);
+        taxi.isRunning = true;
 
-        taxi.setMaxPassenger(4);
+        taxi.maxPassenger = 4;
 
-        taxi.setPrice(price);
+        taxi.price = price;
 
-        taxi.setFuelVolume(startFuelVolume);
+        taxi.fuelVolume = startFuelVolume;
+
+        taxi.currentSpeed = 60;
 
         taxi.pricePerDistance = pricePerDistance;
 
@@ -32,8 +33,6 @@ public class Taxi extends CarImpl {
 
     @Override
     public boolean run(int destination) {
-
-        this.setCurrentSpeed(60);
 
         this.destination = destination;
 
@@ -49,7 +48,7 @@ public class Taxi extends CarImpl {
 
         super.run(this.destination);
 
-        this.setCurrentSpeed(-60);
+        this.calculate();
 
         return true;
     }

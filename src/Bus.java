@@ -10,17 +10,17 @@ public class Bus extends CarImpl {
     public static Bus build(int startFuelVolume, int price){
         Bus bus = new Bus();
 
-        bus.setMaxPassenger(45);
+        bus.maxPassenger = 45;
         
-        bus.setRunning(true);
+        bus.isRunning = true;
 
-        bus.setFuelVolume(startFuelVolume);
+        bus.fuelVolume = startFuelVolume;
 
-        bus.setPrice(price);
+        bus.price = price;
 
-        bus.setCurrentSpeed(30);
+        bus.currentSpeed = 30;
 
-        bus.setCurrentPassenger(0);
+        bus.currentPassenger = 0;
 
         return bus;
     }
